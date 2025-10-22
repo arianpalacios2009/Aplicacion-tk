@@ -5,17 +5,20 @@ ventana.title("Lab.app")
 ventana.geometry("320x400")
 ventana.resizable(False,False)
 
-titulo_labapp = tk.Label(ventana, text= "roblox", font= "Chango", fg= "blue")
+frame1 = tk.Frame(ventana,bg="pink",bd=5,relief="groove",width="250",height="300") 
+frame1.pack(pady=20)
+
+titulo_labapp = tk.Label(frame1, text= "roblox", font= "Chango", bg="pink")
 titulo_labapp.pack(pady=15)
 
-etiqueta_nombre = tk.Label(ventana, text="Introduce tu usuario:")
+etiqueta_nombre = tk.Label(frame1, text="Introduce tu usuario:")
 etiqueta_nombre.pack(pady=5)
-entrada_nombre = tk.Entry(ventana)
+entrada_nombre = tk.Entry(frame1)
 entrada_nombre.pack(pady=5)
 
-etiqueta_contrasena= tk.Label(ventana, text="Introduce tu contraseña:")
+etiqueta_contrasena= tk.Label(frame1, text="Introduce tu contraseña:")
 etiqueta_contrasena.pack(pady=5)
-entrada_contrasena = tk.Entry(ventana)
+entrada_contrasena = tk.Entry(frame1)
 entrada_contrasena.pack(pady=5)
 
 usuario_correcto = "odra_400"
@@ -30,10 +33,10 @@ def iniciar_sesion():
         saludo.config(text=f"¡Inicio de sesion incorrecto!")
 
 
-boton = tk.Button(ventana, text="Confirmar",bg= "green",  command=iniciar_sesion)
+boton = tk.Button(frame1, text="Confirmar",bg= "green",  command=iniciar_sesion)
 boton.pack(pady=10)
 
-saludo = tk.Label(ventana, text="")
+saludo = tk.Label(frame1, text="")
 saludo.pack()
 
 ventana.mainloop()
